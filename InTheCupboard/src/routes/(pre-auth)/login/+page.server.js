@@ -33,6 +33,6 @@ export const actions = {
         // else pass JWT cookie back to user
 
         // once authenticated, redirect to home page
-        redirect(303, "/");
+        redirect(303, "/home");
     }
 }
