@@ -1,2 +1,4 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<!-- THIS WILL BE THE HOME PAGE WITH INFO AND LINKS FOR LOGIN AND CREATE ACCOUNT -->
+
+
+
