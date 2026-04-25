@@ -1,6 +1,6 @@
 <script>
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/in-the-cupboard-text.png';
 
 	let { children } = $props();
 </script>
