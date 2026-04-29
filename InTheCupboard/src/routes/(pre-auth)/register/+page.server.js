@@ -38,7 +38,7 @@ export const actions = {
                     first: firstName,
                     last: lastName,
                 },
-                email,
+                email: email.toLowerCase(),
                 password_hash
             }
     
