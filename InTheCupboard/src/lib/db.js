@@ -55,9 +55,13 @@ export function getUser(db, email) {
         throw new Error("Missing Credentials To Locate User");
     }
 
-    const stmt = db.prepare(`SELECT * FROM users WHERE email = $`);
-    const user = stmt.get(email);
-    return user;
+    try {        
+        const stmt = db.prepare(`SELECT * FROM users WHERE email = (?)`);
+        const user = stmt.get(email);
+        return user;
+    } catch (error) {
+        throw error
+    }
 }
 
 
