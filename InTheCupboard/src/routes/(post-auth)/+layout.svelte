@@ -1,5 +1,5 @@
 <script>
-	let { children } = $props();
+    let { children } = $props();
 </script>
 
 <nav class="flex mx-6 my-6">
