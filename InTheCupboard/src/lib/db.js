@@ -64,4 +64,24 @@ export function getUser(db, email) {
     }
 }
 
+export function getUserDishes(db, userId) {
+    // check if we got the data we need
+    if (!db) {
+        throw new Error("Missing Database Connection");
+    }
+
+    if (!userId) {
+        throw new Error("Missing Credentials to Locate User");
+    }
+
+    // query the database for dishes
+    try {
+        const stmt = db.prepare(`SELECT * FROM dishes WHERE user_id = (?)`);
+        const results = stmt.all(userId);
+        return results;
+    } catch ( error ) {
+        throw error;
+    }
+}
+
 
