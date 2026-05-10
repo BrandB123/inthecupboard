@@ -42,12 +42,12 @@
         <label for="ingredients" class="block font-bold">Ingredients</label>
         <ul class="ml-2">
             {#each ingredients as ingredient}
-                <li>{ingredient}</li>
+            <li>{ingredient}</li>
             {/each}
         </ul>
         
         <div class="flex gap-2 justify-end ml-2 ">
-            <input name="ingredients" type="text" class="border-b pl-2 grow" bind:value={newIngredient}>
+            <input name="add-ingredient" type="text" class="border-b pl-2 grow" bind:value={newIngredient}>
             <button 
                 type="button"
                 class="border rounded-lg px-2 "
@@ -55,11 +55,13 @@
                 add
             </button>
         </div>
+        <input type="text" name="ingredients" class="invisible" bind:value={ingredients}>
     </div>
 
     <div class="flex justify-center content-center">
         <button class="border rounded-md px-2 my-2">Submit</button>
     </div>
-    {#if form?.titleMissing}<p class="text-red-600 mx-auto">Title is a required field</p>{/if}
+    {#if form?.nameMissing}<p class="text-red-600 mx-auto">Title is a required field</p>{/if}
     {#if form?.categoryMissing}<p class="text-red-600 mx-auto">Category is a required field</p>{/if}
+    {#if form?.insertError}<p class="text-red-600 mx-auto">Sorry, there was an error adding your dish. Please try again later</p>{/if}
 </form>

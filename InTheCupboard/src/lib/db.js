@@ -64,6 +64,21 @@ export function getUser(db, email) {
     }
 }
 
+export function addUserDish(db, dishName, ingredients, category, userId) {
+    if (!db) throw new Error("Missing Database Connection");
+    if (!dishName || !category || !ingredients || !userId) throw new Error("Missing Data Needed For Update");
+
+    try {
+        console.log('[Adding Dish to Database]')
+        const stmt = db.prepare(`
+            INSERT INTO dishes (name, ingredients, category, user_id) VALUES (?, ?, ?, ?)`);
+        stmt.run(dishName, ingredients, category, userId)
+        console.log('[Dish Added to Database]');
+    } catch (error) {
+        throw error
+    }
+}
+
 export function getUserDishes(db, userId) {
     // check if we got the data we need
     if (!db) {
