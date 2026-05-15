@@ -72,10 +72,24 @@ export function addUserDish(db, dishName, ingredients, category, userId) {
         console.log('[Adding Dish to Database]')
         const stmt = db.prepare(`
             INSERT INTO dishes (name, ingredients, category, user_id) VALUES (?, ?, ?, ?)`);
-        stmt.run(dishName, ingredients, category, userId)
+        stmt.run(dishName.toLowerCase(), ingredients, category, userId)
         console.log('[Dish Added to Database]');
     } catch (error) {
         throw error
+    }
+}
+
+export function getUserDish(db, userId, dishName) {
+    if (!db) throw new Error("Missing Database Connection");
+
+    if (!userId || !dishName) throw new Error ("Missing Arguments to Locate Dish");
+    
+    try {
+        const stmt = db.prepare(`SELECT * FROM dishes WHERE user_id = (?) AND name = (?)`);
+        const result = stmt.get(userId, dishName);
+        return result;
+    } catch ( error ) {
+        throw error;
     }
 }
 

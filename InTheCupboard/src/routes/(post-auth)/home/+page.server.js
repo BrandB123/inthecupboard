@@ -14,10 +14,8 @@ export const load = async ({ cookies }) => {
     }
 
     const db = connectToDatabase("local.db");
-    const user = getUser(db, token.email);
-
     try {
-        return { dishes: getUserDishes( db, user.id ) };
+        return { dishes: getUserDishes( db, token?.id ) };
     } catch (error) {
         console.log("[Error Obtaining Dishes]");
         console.log(error);

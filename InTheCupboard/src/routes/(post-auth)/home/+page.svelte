@@ -13,7 +13,11 @@
             {#if data.dishes?.length > 0}
                 {#each data.dishes as dish}
                     <li class="ml-8">
-                        <a href="/dishes/{dish?.name.toLowerCase()}">{dish?.name}</a>
+                        <a 
+                            href="/dishes/{dish?.name.toLowerCase()}"
+                            class="capitalize">
+                            {dish?.name}
+                        </a>
                     </li>
                 {/each}
             {:else}
