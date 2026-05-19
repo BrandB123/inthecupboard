@@ -24,11 +24,12 @@
                 {#each allDishes as dish}
                    {#if dish.category === category || category === "all"}
                        <li class="ml-8">
-                               <a 
-                                   href="/dishes/{dish?.name.toLowerCase()}"
-                                   class="capitalize">
-                                   {dish?.name}
-                               </a>
+                            <a 
+                                data-sveltekit-reload
+                                href="/dishes/{dish?.name.toLowerCase()}"
+                                class="capitalize">
+                                {dish?.name}
+                            </a>
                         </li>
                    {/if}
                 {/each}
