@@ -29,7 +29,7 @@ export const actions = {
         if (!CATEGORIES.includes(category)) return fail(400, { categoryMissing: true });
 
         // add dish to database
-        const db = connectToDatabase("local.db");
+        const db = connectToDatabase(process.env.db_path);
 
         try {
             addUserDish(db, name, ingredients, category, token.id);

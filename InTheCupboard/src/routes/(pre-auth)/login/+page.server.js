@@ -23,7 +23,7 @@ export const actions = {
             return fail(400, { passwordMissing: true, email })
         }
 
-        const db = connectToDatabase("local.db");
+        const db = connectToDatabase(process.env.db_path);
         const user = getUser(db, email.toLowerCase());
         console.log("USER: ", user);
 

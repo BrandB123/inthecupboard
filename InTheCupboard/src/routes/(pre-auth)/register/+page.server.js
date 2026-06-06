@@ -42,7 +42,7 @@ export const actions = {
                 password_hash
             }
     
-            const db = connectToDatabase("local.db");
+            const db = connectToDatabase(process.env.db_path);
             createUser(db, user);
         } catch (error) {
             if (error.code && error.code === 'SQLITE_CONSTRAINT_UNIQUE') {

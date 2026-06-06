@@ -13,7 +13,7 @@ export const load = async ({ cookies }) => {
         console.log(e);
     }
 
-    const db = connectToDatabase("local.db");
+    const db = connectToDatabase(process.env.db_path);
     try {
         return { dishes: getUserDishes( db, token?.id ) };
     } catch (error) {

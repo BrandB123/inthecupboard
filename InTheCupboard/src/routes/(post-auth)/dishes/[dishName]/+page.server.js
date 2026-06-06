@@ -12,7 +12,7 @@ export const load = ({ url, cookies }) => {
         console.log(e);
     }
     
-    const db = connectToDatabase("local.db");
+    const db = connectToDatabase(process.env.db_path);
     // console.log("pathname", url.pathname.split("/"));
     const dishName = url?.pathname?.split("/")[2];
 
