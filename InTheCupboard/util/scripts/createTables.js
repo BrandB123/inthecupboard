@@ -26,12 +26,15 @@ console.log("[Connecting to Database...]");
 const db = new Database(process.env.db_path);
 console.log("[Database Connection Established]")
 
-enableForeignKeys(db);
+try {
+    enableForeignKeys(db);
+    
+    createUsersTable(db);
+    
+    createDishesTable(db);
+    
+    createDishNameConstraint(db);
+} finally {
+    db.close();
+}
 
-createUsersTable(db);
-
-createDishesTable(db);
-
-createDishNameConstraint(db);
-
-db.close();
