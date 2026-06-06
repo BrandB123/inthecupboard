@@ -13,15 +13,13 @@ export const load = ({ url, cookies }) => {
     }
     
     const db = connectToDatabase(process.env.db_path);
-    // console.log("pathname", url.pathname.split("/"));
-    const dishName = url?.pathname?.split("/")[2];
+    const dishName = url?.pathname?.split("/")[2].replace("%20", " ");
 
     try {
         const dish = getUserDish(db, token.id, dishName);
-        // console.log("DISH: ", dish);
         return { dish };
     } catch (error) {
-        console.log("[Error Obtaining Dish");
+        console.log("[Error Obtaining Dish]");
         console.log(error);
         return {message: "Sorry, we couldn't find this dish currently. Please try again later"};
     }
