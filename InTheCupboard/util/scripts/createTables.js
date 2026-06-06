@@ -22,7 +22,8 @@ import Database from 'better-sqlite3';
 import { createDishesTable, createDishNameConstraint, createUsersTable, enableForeignKeys } from '../helpers/dbHelpers.js';
 
 console.log("[Connecting to Database...]");
-const db = new Database(process.env.db_path, {fileMustExist: true});
+// const db = new Database(process.env.db_path, {fileMustExist: true});
+const db = new Database(process.env.db_path);
 console.log("[Database Connection Established]")
 
 enableForeignKeys(db);
