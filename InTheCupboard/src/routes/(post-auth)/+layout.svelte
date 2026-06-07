@@ -21,39 +21,41 @@
 </script>
 
 <nav class="flex mx-6 my-6">
-	<h1 class="font-serif text-3xl">In The Cupboard</h1>
-	<div class="ml-auto mr-6 flex gap-6 items-end">
-		<a 
-            data-sveltekit-reload
-            class="{homeTabVisible}"
-            href="/home">
-            Home
-        </a>
-		<a 
-            data-sveltekit-reload
-            class="{dishTabVisibility}"
-            href="/add-dish">
-            Add Dish
-        </a>
-		<a 
-            data-sveltekit-reload
-            class="{groceryTabVisibility}"
-            href="/grocery-list">
-            Grocery List
-        </a>
-		<a 
-            data-sveltekit-reload
-            class="{searchTabVisibility}"
-            href="/search">
-            Search
-        </a>
-        <a 
-            data-sveltekit-reload
-            data-sveltekit-preload-data="tap"
-            class="{logoutTabVisibility}"
-            href="/logout">
-            Log out
-        </a>
-	</div>
+	<div class="w-full flex flex-col md:flex-row">
+        <h1 class="font-serif text-3xl block w-full">In The Cupboard</h1>
+        <div class="ml-auto flex gap-6 md:items-end justify-center md:justify-end w-full text-xs pt-3 md:text-md lg:text-lg">
+            <a 
+                data-sveltekit-reload
+                class="{homeTabVisible}"
+                href="/home">
+                Home
+            </a>
+            <a 
+                data-sveltekit-reload
+                class="{dishTabVisibility}"
+                href="/add-dish">
+                Add Dish
+            </a>
+            <a 
+                data-sveltekit-reload
+                class="{groceryTabVisibility}"
+                href="/grocery-list">
+                Grocery List
+            </a>
+            <a 
+                data-sveltekit-reload
+                class="{searchTabVisibility}"
+                href="/search">
+                Search
+            </a>
+            <a 
+                data-sveltekit-reload
+                data-sveltekit-preload-data="tap"
+                class="{logoutTabVisibility}"
+                href="/logout">
+                Log out
+            </a>
+        </div>
+    </div>
 </nav>
 {@render children()}
