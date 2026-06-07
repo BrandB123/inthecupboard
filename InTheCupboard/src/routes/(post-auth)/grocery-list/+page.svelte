@@ -64,7 +64,7 @@
         <p>{data.message}</p>
     {/if}
     
-    <div class="w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 { dishesListVisible ? "visible" : "hidden" }">
+    <div class=" w-5/6 md:w-1/2 xl:w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 { dishesListVisible ? "visible" : "hidden" }">
         <h2 class="text-3xl text-center border-b mb-4 pb-2 ">Grocery List</h2>
         <!-- make this a search bar -->
         <select class="border rounded-lg block ml-auto text-center">
@@ -93,7 +93,7 @@
         {/if}
     </div>
 
-    <div class="w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 relative { groceryListVisible ? "visible" : "hidden" }">
+    <div class="w-5/6 md:w-1/2 xl:w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 relative { groceryListVisible ? "visible" : "hidden" }">
         <h2 class="text-3xl text-center border-b mb-4 pb-2 ">Grocery List</h2>
         {#if groceries.length > 0}
                 {#each groceries as item}

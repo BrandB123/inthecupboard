@@ -11,7 +11,7 @@
         <p>{data.message}</p>
     {/if}
     
-    <div class="w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 min-h-[50vh]">
+    <div class="w-5/6 md:w-1/2 lg:w-1/3 border rounded-xl px-8 pt-4 pb-8 mx-auto mt-20 min-h-[50vh]">
         <h2 class="text-3xl text-center border-b mb-4 pb-2 ">Dishes</h2>
         <select bind:value={category} class="border rounded-lg block ml-auto text-center">
             <option value="all" selected>All</option>

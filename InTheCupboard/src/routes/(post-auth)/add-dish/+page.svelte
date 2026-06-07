@@ -20,7 +20,7 @@
     }
 </script>
 
-<form method="POST" class="border rounded-xl flex flex-col gap-5 w-1/3 px-10 pt-10 pb-4 mx-auto mt-20">
+<form method="POST" class="border rounded-xl flex flex-col gap-5  w-5/6 md:w-1/2 xl:w-1/3 px-10 pt-10 pb-4 mx-auto mt-20">
     <!-- TODO: add some input validation here -->
     <div class="w-full flex flex-col justify-items-center">
         <label for="name" class="block font-bold">Title</label>
