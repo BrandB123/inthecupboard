@@ -2,25 +2,25 @@
     let {data, form} = $props();
 </script>
 
-<form method="POST" class="border rounded-xl grid grid-cols-2 grid-rows-3 gap-5 w-2/5 px-10 pt-10 pb-4 mx-auto mt-20">
-    <div class="">
+<form method="POST" class="border rounded-xl grid grid-cols-2 grid-rows-3 gap-5 w-5/6 lg:w-2/5 px-10 pt-10 pb-4 mx-auto mt-20">
+    <div class="col-span-full md:col-auto flex flex-col">
         <label for="firstName" class="block capitalize">First Name</label>
         <input name="firstName" type="text" class="border rounded-lg pl-2" value={form?.firstName ?? ""}>
     </div>
 
-    <div class="">
+    <div class="col-span-full md:col-auto flex flex-col">
         <label for="lastName" class="block">Last Name</label>
         <input name="lastName" type="text" class="border rounded-lg pl-2" value={form?.lastName ?? ""}>
     </div>
 
     <!-- TODO: implement email requirement -->
-    <div class="">
+    <div class="col-span-full md:col-auto flex flex-col">
         <label for="email" class="block">Email</label>
         <input name="email" type="text" class="border rounded-lg pl-2" value={form?.email ?? ""}>
     </div>
 
     <!-- TODO: implement password validations (length, etc) -->
-    <div class="">
+    <div class="col-span-full md:col-auto flex flex-col">
         <label for="password" class="block">Password</label>
         <input name="password" type="password" class="border rounded-lg pl-2">
     </div>
